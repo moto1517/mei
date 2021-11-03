@@ -97,7 +97,7 @@
       </a-scene>
     
       <script>
-      window.addEventListener('load', () => {
+      window.addEventListener('DOMContentLoaded', () => {
         const el = document.querySelector('[gps-entity-place]');
         el.addEventListener('gps-entity-place-update-positon', (event) => {
           if(event.detail.distance < 1000) {
