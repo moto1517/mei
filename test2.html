@@ -24,8 +24,8 @@
     <script>
       window.addEventListener('load', () => {
         const el = document.querySelector('[gps-entity-place]');
-        el.addEventListener('gps-entity-place-update-positon', (event) => {
-          if(event.detail.distance < 100) {
+        window.addEventListener('gps-entity-place-loaded', (event) => {
+          if(event.detail.position.latitude - el.gps-entity-place.latitude< 0.01) {
             el.setAttribute('material','color: yellow');
           } else {
             el.setAttribute('material','color: green');
