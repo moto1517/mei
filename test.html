@@ -99,8 +99,8 @@
       <script>
       window.addEventListener('DOMContentLoaded', () => {
         const el = document.querySelector('[gps-entity-place]');
-        el.addEventListener('gps-entity-place-update-positon', (event) => {
-          if(event.detail.distance < 1000) {
+        el.addEventListener('gps-entity-place-loaded', (event) => {
+          if(event.detail.component.gps-entity-place.latitude < 36) {
             el.setAttribute('color',"green");
           } else {
             el.setAttribute('color',"red");
