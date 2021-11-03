@@ -24,6 +24,7 @@
         look-at="[gps-camera]"
         scale="10 10 10"
         random-position="min: 0 -50 0; max: 0 80 0"
+        color="yellow"
         gps-entity-place="latitude: 35.52935111056348; longitude: 140.0837876374537;"
       ></a-text>
       <a-text
@@ -34,6 +35,7 @@
         look-at="[gps-camera]"
         scale="10 10 10"
         random-position="min: 0 -20 0; max: 0 65 0"
+        color="yellow"
         gps-entity-place="latitude: 35.529299; longitude: 140.083530;"
       ></a-text>
       <a-text
@@ -44,7 +46,7 @@
         look-at="[gps-camera]"
         scale="10 10 10"
         position="0 65 0"
-        color="red"
+        color="yellow"
         gps-entity-place="latitude: 35.529290; longitude: 140.083160;"
       ></a-text>
       <a-text
@@ -66,6 +68,7 @@
         look-at="[gps-camera]"
         scale="10 10 10"
         random-position="min: 0 -20 0; max: 0 65 0"
+        color="yellow"
         gps-entity-place="latitude: 35.5291056277498; longitude: 140.08243145247735;"
       ></a-text>
       <a-text
@@ -76,6 +79,7 @@
         look-at="[gps-camera]"
         scale="10 10 10"
         random-position="min: 0 -20 0; max: 0 65 0"
+        color="yellow"
         gps-entity-place="latitude: 35.529011; longitude: 140.081631;"
       ></a-text>
       <a-text
@@ -93,13 +97,13 @@
       </a-scene>
     
       <script>
-      window.addEventListener('DOMContentLoaded', () => {
+      window.addEventListener('load', () => {
         const el = document.querySelector('[gps-entity-place]');
         el.addEventListener('gps-entity-place-update-positon', (event) => {
-          if(event.detail.distance < 50) {
-            el.setAttribute('color','green');
+          if(event.detail.distance < 1000) {
+            el.setAttribute("color","green");
           } else {
-            el.setAttribute('color','red');
+            el.setAttribute("color","red");
           }
         });
       });
