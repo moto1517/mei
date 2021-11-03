@@ -96,18 +96,18 @@
       <a-camera gps-camera rotation-reader> </a-camera>
       </a-scene>
     
-<!--       <script>
+      <script>
       window.addEventListener('DOMContentLoaded', () => {
         const el = document.querySelector('[gps-entity-place]');
-        el.addEventListener('gps-entity-place-loaded', (event) => {
-          if(event.detail.component.gps-entity-place.latitude < 36) {
+//         el.addEventListener('gps-entity-place-loaded', (event) => {
+          if(el.getAttribute('gps-entity-place').latitude < 36) {
             el.setAttribute('color',"green");
           } else {
             el.setAttribute('color',"red");
           }
-        });
+//         });
       });
-      </script> -->
+      </script>
     
   </body>
 </html>
