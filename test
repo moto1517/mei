@@ -25,7 +25,7 @@
         scale="10 10 10"
         random-position="min: 0 -50 0; max: 0 80 0"
         color="yellow"
-        gps-entity-place="latitude: 35.52935111056348; longitude: 140.0837876374537;"
+        gps-entity-place="latitude: 35.653766; longitude: 140.055024;"
       ></a-text>
       <a-text
         value="にじゅう"
