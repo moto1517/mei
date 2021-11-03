@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>onomatope demo</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+  </head>
+
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene
+      vr-mode-ui="enabled: false"
+      embedded
+      arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
+    >
+      <a-text
+        value="チバだいがくぅ"
+        font="mplus-msdf.json"
+        font-image="mplus-msdf.png"
+        negate="false"
+        look-at="[gps-camera]"
+        scale="10 10 10"
+        position="0 50 0"
+        gps-entity-place="latitude: 35.6249542170571; longitude: 140.1038758627506;"
+      ></a-text>
+      <a-text
+        value="できた"
+        font="mplus-msdf.json"
+        font-image="mplus-msdf.png"
+        negate="false"
+        look-at="[gps-camera]"
+        scale="10 10 10"
+        gps-entity-place="latitude: 35.623665; longitude: 140.104425;"
+      ></a-text>
+      <a-image src="chu.png"
+        width="4"
+        height="4"
+        gps-entity-place="latitude: 35.6249542170571; longitude: 140.1038758627506;"
+      ></a-image>
+      <a-text
+        value="こうがくぶイチごうとう"
+        font="mplus-msdf.json"
+        font-image="mplus-msdf.png"
+        negate="false"
+        look-at="[gps-camera]"
+        scale="10 10 10"
+        gps-entity-place="latitude: 35.62418543030099; longitude: 140.10485990421458;"
+      ></a-text>
+      <a-text
+        value="かたらいのもり"
+        font="mplus-msdf.json"
+        font-image="mplus-msdf.png"
+        negate="false"
+        look-at="[gps-camera]"
+        scale="10 10 10"
+        gps-entity-place="latitude: 35.627612; longitude: 140.102372;"
+      ></a-text>
+      <a-camera gps-camera rotation-reader> </a-camera>
+   　</a-scene> 
+  </body>
+</html>

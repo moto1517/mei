@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>onomatope demo</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
+  </head>
+
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene
+      vr-mode-ui="enabled: false"
+      embedded
+      arjs="sourceType: webcam; debugUIEnabled: false;"
+    >
+      <a-text
+        value="ゼロ"
+        font="mplus-msdf.json"
+        font-image="mplus-msdf.png"
+        negate="false"
+        look-at="[gps-camera]"
+        scale="10 10 10"
+        random-position="min: 0 -50 0; max: 0 80 0"
+        gps-entity-place="latitude: 35.52935111056348; longitude: 140.0837876374537;"
+      ></a-text>
+      <a-text
+        value="にじゅう"
+        font="mplus-msdf.json"
+        font-image="mplus-msdf.png"
+        negate="false"
+        look-at="[gps-camera]"
+        scale="10 10 10"
+        random-position="min: 0 -20 0; max: 0 65 0"
+        gps-entity-place="latitude: 35.529299; longitude: 140.083530;"
+      ></a-text>
+      <a-text
+        value="ろくじゅう"
+        font="mplus-msdf.json"
+        font-image="mplus-msdf.png"
+        negate="false"
+        look-at="[gps-camera]"
+        scale="10 10 10"
+        position="0 65 0"
+        color="red"
+        gps-entity-place="latitude: 35.529290; longitude: 140.083160;"
+      ></a-text>
+      <a-text
+        value="きゅうじゅう"
+        font="mplus-msdf.json"
+        font-image="mplus-msdf.png"
+        negate="false"
+        look-at="[gps-camera]"
+        scale="10 10 10"
+        position="0 -20 0"
+        color="yellow"
+        gps-entity-place="latitude: 35.52928527135535; longitude: 140.0827900415085;"
+      ></a-text>
+      <a-text
+        value="いちキロとにじゅう"
+        font="mplus-msdf.json"
+        font-image="mplus-msdf.png"
+        negate="false"
+        look-at="[gps-camera]"
+        scale="10 10 10"
+        random-position="min: 0 -20 0; max: 0 65 0"
+        gps-entity-place="latitude: 35.5291056277498; longitude: 140.08243145247735;"
+      ></a-text>
+      <a-text
+        value="にキロ"
+        font="mplus-msdf.json"
+        font-image="mplus-msdf.png"
+        negate="false"
+        look-at="[gps-camera]"
+        scale="10 10 10"
+        random-position="min: 0 -20 0; max: 0 65 0"
+        gps-entity-place="latitude: 35.529011; longitude: 140.081631;"
+      ></a-text>
+      <a-text
+        value="さんキロ"
+        font="mplus-msdf.json"
+        font-image="mplus-msdf.png"
+        negate="false"
+        look-at="[gps-camera]"
+        scale="10 10 10"
+        random-position="min: 0 -20 0; max: 0 65 0"
+        color="yellow"
+        gps-entity-place="latitude: 35.528876; longitude: 140.080531;"
+      ></a-text>
+      <a-camera gps-camera rotation-reader> </a-camera>
+      </a-scene>
+    
+      <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const el = document.querySelector('[gps-entity-place]');
+        el.addEventListener('gps-entity-place-update-positon', (event) => {
+          if(event.detail.distance < 50) {
+            el.setAttribute('color','green');
+          } else {
+            el.setAttribute('color','red');
+          }
+        });
+      });
+      </script>
+    
+  </body>
+</html>
